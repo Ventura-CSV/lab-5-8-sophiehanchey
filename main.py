@@ -1,17 +1,18 @@
+def myfunc(lst):
+	print (id(lst), 'ID of lst in myfunc() as soon as the function starts')
+	lst[0] = 999
+	print (id(lst), 'ID of lst in myfunc() after changing value of the 1st element')
+	return lst
 
-def findmin(numbers):
-	minidx = numbers.index(min(numbers))
-	numbers[0], numbers[minidx] = numbers[minidx], numbers[0]
+numbers = [1,2,3]
+print (id(numbers), 'numbers ID ')
 
-	
+## comment out and run
+# retlst = myfunc(numbers)
+# a, *retlst = myfunc(numbers)
 
-numbers = [5, 4, 3, 2, 1]
+retlst[0] = 999
+print (id(retlst), 'retlst ID: returned from myfunc')
 
-others = numbers
-
-###########################
-# Make your code
-# Complet this main function
-###########################
-
-print (numbers) # Expected output     1 2 3 4 5
+print (numbers)
+print (retlst)
